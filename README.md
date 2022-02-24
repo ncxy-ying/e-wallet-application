@@ -38,13 +38,13 @@ $ rails c
 $ user_1 = User.create({email: Faker::Internet.unique.email})
 $ user_2 = User.create({email: Faker::Internet.unique.email})
 
-# deposit money to user_1
+# deposit 1000 to user_1
 $ Feature::WalletTransaction::Deposit.new(user_1.id, 1000).call
 
-# Withdraw money to user_1
+# Withdraw 500 to user_1
 $ Feature::WalletTransaction::Withdraw.new(user_1.id, 500).call
 
-# Transfer money from user_1 to user_2
+# Transfer 50 from user_1 to user_2
 $ Feature::WalletTransaction::Transfer.new(user_1.id,user_2.id, 50).call
 
 # Transaction History can query by
